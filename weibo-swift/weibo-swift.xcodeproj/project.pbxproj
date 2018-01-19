@@ -11,9 +11,9 @@
 		C92EEA7E2011CF32008F8BE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EEA7D2011CF32008F8BE1 /* ViewController.swift */; };
 		C92EEA812011CF32008F8BE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C92EEA7F2011CF32008F8BE1 /* Main.storyboard */; };
 		C92EEA832011CF32008F8BE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C92EEA822011CF32008F8BE1 /* Assets.xcassets */; };
-		C92EEA862011CF32008F8BE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C92EEA842011CF32008F8BE1 /* LaunchScreen.storyboard */; };
 		C92EEA912011CF32008F8BE1 /* weibo_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EEA902011CF32008F8BE1 /* weibo_swiftTests.swift */; };
 		C92EEA9C2011CF32008F8BE1 /* weibo_swiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EEA9B2011CF32008F8BE1 /* weibo_swiftUITests.swift */; };
+		C92EEAAA2011DBC7008F8BE1 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C92EEAA92011DBC7008F8BE1 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +39,6 @@
 		C92EEA7D2011CF32008F8BE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C92EEA802011CF32008F8BE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C92EEA822011CF32008F8BE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C92EEA852011CF32008F8BE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C92EEA872011CF32008F8BE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C92EEA8C2011CF32008F8BE1 /* weibo-swiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "weibo-swiftTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92EEA902011CF32008F8BE1 /* weibo_swiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weibo_swiftTests.swift; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		C92EEA972011CF32008F8BE1 /* weibo-swiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "weibo-swiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92EEA9B2011CF32008F8BE1 /* weibo_swiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weibo_swiftUITests.swift; sourceTree = "<group>"; };
 		C92EEA9D2011CF32008F8BE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C92EEAA92011DBC7008F8BE1 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +77,7 @@
 		C92EEA6F2011CF32008F8BE1 = {
 			isa = PBXGroup;
 			children = (
+				C92EEAA92011DBC7008F8BE1 /* Default-568h@2x.png */,
 				C92EEA7A2011CF32008F8BE1 /* weibo-swift */,
 				C92EEA8F2011CF32008F8BE1 /* weibo-swiftTests */,
 				C92EEA9A2011CF32008F8BE1 /* weibo-swiftUITests */,
@@ -101,7 +102,6 @@
 				C92EEA7D2011CF32008F8BE1 /* ViewController.swift */,
 				C92EEA7F2011CF32008F8BE1 /* Main.storyboard */,
 				C92EEA822011CF32008F8BE1 /* Assets.xcassets */,
-				C92EEA842011CF32008F8BE1 /* LaunchScreen.storyboard */,
 				C92EEA872011CF32008F8BE1 /* Info.plist */,
 			);
 			path = "weibo-swift";
@@ -232,9 +232,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C92EEA862011CF32008F8BE1 /* LaunchScreen.storyboard in Resources */,
 				C92EEA832011CF32008F8BE1 /* Assets.xcassets in Resources */,
 				C92EEA812011CF32008F8BE1 /* Main.storyboard in Resources */,
+				C92EEAAA2011DBC7008F8BE1 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,14 +302,6 @@
 				C92EEA802011CF32008F8BE1 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C92EEA842011CF32008F8BE1 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C92EEA852011CF32008F8BE1 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -429,11 +421,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 27A9PVFTM4;
 				INFOPLIST_FILE = "weibo-swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sandouchan.weibo-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -444,11 +437,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 27A9PVFTM4;
 				INFOPLIST_FILE = "weibo-swift/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sandouchan.weibo-swift";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
