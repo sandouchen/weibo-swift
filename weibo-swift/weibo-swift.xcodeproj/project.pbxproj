@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		C92EEA7C2011CF32008F8BE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EEA7B2011CF32008F8BE1 /* AppDelegate.swift */; };
-		C92EEA7E2011CF32008F8BE1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EEA7D2011CF32008F8BE1 /* ViewController.swift */; };
 		C92EEA812011CF32008F8BE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C92EEA7F2011CF32008F8BE1 /* Main.storyboard */; };
 		C92EEA832011CF32008F8BE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C92EEA822011CF32008F8BE1 /* Assets.xcassets */; };
 		C92EEA912011CF32008F8BE1 /* weibo_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EEA902011CF32008F8BE1 /* weibo_swiftTests.swift */; };
@@ -35,7 +34,6 @@
 /* Begin PBXFileReference section */
 		C92EEA782011CF32008F8BE1 /* weibo-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weibo-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92EEA7B2011CF32008F8BE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C92EEA7D2011CF32008F8BE1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C92EEA802011CF32008F8BE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C92EEA822011CF32008F8BE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C92EEA872011CF32008F8BE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,8 +93,8 @@
 		C92EEA7A2011CF32008F8BE1 /* weibo-swift */ = {
 			isa = PBXGroup;
 			children = (
+				C9FE1AE02011ED92002ABC12 /* Classes */,
 				C92EEA7B2011CF32008F8BE1 /* AppDelegate.swift */,
-				C92EEA7D2011CF32008F8BE1 /* ViewController.swift */,
 				C92EEA7F2011CF32008F8BE1 /* Main.storyboard */,
 				C92EEA822011CF32008F8BE1 /* Assets.xcassets */,
 				C92EEA872011CF32008F8BE1 /* Info.plist */,
@@ -120,6 +118,53 @@
 				C92EEA9D2011CF32008F8BE1 /* Info.plist */,
 			);
 			path = "weibo-swiftUITests";
+			sourceTree = "<group>";
+		};
+		C9FE1AE02011ED92002ABC12 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				C9FE1AE52011ED92002ABC12 /* Main(主要) */,
+				C9FE1AE32011ED92002ABC12 /* Home(首页) */,
+				C9FE1AE12011ED92002ABC12 /* Discover(发现) */,
+				C9FE1AE72011ED92002ABC12 /* Message(消息) */,
+				C9FE1AE92011ED92002ABC12 /* Profile(我) */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C9FE1AE12011ED92002ABC12 /* Discover(发现) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Discover(发现)";
+			sourceTree = "<group>";
+		};
+		C9FE1AE32011ED92002ABC12 /* Home(首页) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Home(首页)";
+			sourceTree = "<group>";
+		};
+		C9FE1AE52011ED92002ABC12 /* Main(主要) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Main(主要)";
+			sourceTree = "<group>";
+		};
+		C9FE1AE72011ED92002ABC12 /* Message(消息) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Message(消息)";
+			sourceTree = "<group>";
+		};
+		C9FE1AE92011ED92002ABC12 /* Profile(我) */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Profile(我)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,7 +300,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C92EEA7E2011CF32008F8BE1 /* ViewController.swift in Sources */,
 				C92EEA7C2011CF32008F8BE1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +458,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 27A9PVFTM4;
 				INFOPLIST_FILE = "weibo-swift/Info.plist";
@@ -430,6 +475,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 27A9PVFTM4;
 				INFOPLIST_FILE = "weibo-swift/Info.plist";
