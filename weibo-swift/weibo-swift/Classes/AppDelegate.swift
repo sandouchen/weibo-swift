@@ -12,10 +12,15 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+//        UITabBar.appearance().tintColor = UIColor(red: 253/255, green: 109/255, blue: 9/255, alpha: 1)
+//
+//        window = UIWindow(frame: UIScreen.main.bounds)
+//        
+//        window?.rootViewController = MainViewController()
+//        window?.makeKeyAndVisible()
         
         return true
     }

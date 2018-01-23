@@ -7,11 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C924E7512015BC2C00D1F912 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = C924E7502015BC2B00D1F912 /* MainVCSettings.json */; };
 		C92EEA7C2011CF32008F8BE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EEA7B2011CF32008F8BE1 /* AppDelegate.swift */; };
 		C92EEA812011CF32008F8BE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C92EEA7F2011CF32008F8BE1 /* Main.storyboard */; };
 		C92EEA832011CF32008F8BE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C92EEA822011CF32008F8BE1 /* Assets.xcassets */; };
 		C92EEA912011CF32008F8BE1 /* weibo_swiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EEA902011CF32008F8BE1 /* weibo_swiftTests.swift */; };
 		C92EEA9C2011CF32008F8BE1 /* weibo_swiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EEA9B2011CF32008F8BE1 /* weibo_swiftUITests.swift */; };
+		C9BDC8AE2016CF0C00CE3FEB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9BDC8AD2016CF0C00CE3FEB /* Home.storyboard */; };
+		C9BDC8B32016D0F400CE3FEB /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9BDC8B22016D0F400CE3FEB /* Discover.storyboard */; };
+		C9BDC8BA2016D50600CE3FEB /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9BDC8B92016D50600CE3FEB /* Message.storyboard */; };
+		C9BDC8BC2016D52D00CE3FEB /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9BDC8BB2016D52C00CE3FEB /* Profile.storyboard */; };
+		C9FE1AF12011F447002ABC12 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE1AF02011F447002ABC12 /* MainViewController.swift */; };
+		C9FE1AF52011F5C4002ABC12 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE1AF42011F5C4002ABC12 /* HomeViewController.swift */; };
+		C9FE1AF72011F5D5002ABC12 /* DiscoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE1AF62011F5D5002ABC12 /* DiscoverViewController.swift */; };
+		C9FE1AF92011F5E4002ABC12 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE1AF82011F5E4002ABC12 /* MessageViewController.swift */; };
+		C9FE1AFB2011F5FA002ABC12 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FE1AFA2011F5FA002ABC12 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C924E7502015BC2B00D1F912 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		C92EEA782011CF32008F8BE1 /* weibo-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weibo-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92EEA7B2011CF32008F8BE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C92EEA802011CF32008F8BE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -43,6 +54,15 @@
 		C92EEA972011CF32008F8BE1 /* weibo-swiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "weibo-swiftUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92EEA9B2011CF32008F8BE1 /* weibo_swiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weibo_swiftUITests.swift; sourceTree = "<group>"; };
 		C92EEA9D2011CF32008F8BE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9BDC8AD2016CF0C00CE3FEB /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		C9BDC8B22016D0F400CE3FEB /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
+		C9BDC8B92016D50600CE3FEB /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
+		C9BDC8BB2016D52C00CE3FEB /* Profile.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Profile.storyboard; sourceTree = "<group>"; };
+		C9FE1AF02011F447002ABC12 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		C9FE1AF42011F5C4002ABC12 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		C9FE1AF62011F5D5002ABC12 /* DiscoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverViewController.swift; sourceTree = "<group>"; };
+		C9FE1AF82011F5E4002ABC12 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		C9FE1AFA2011F5FA002ABC12 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +90,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C924E74F2015BC2B00D1F912 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				C924E7502015BC2B00D1F912 /* MainVCSettings.json */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		C92EEA6F2011CF32008F8BE1 = {
 			isa = PBXGroup;
 			children = (
@@ -94,8 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				C9FE1AE02011ED92002ABC12 /* Classes */,
-				C92EEA7B2011CF32008F8BE1 /* AppDelegate.swift */,
-				C92EEA7F2011CF32008F8BE1 /* Main.storyboard */,
+				C924E74F2015BC2B00D1F912 /* Resource */,
 				C92EEA822011CF32008F8BE1 /* Assets.xcassets */,
 				C92EEA872011CF32008F8BE1 /* Info.plist */,
 			);
@@ -123,10 +150,11 @@
 		C9FE1AE02011ED92002ABC12 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C92EEA7B2011CF32008F8BE1 /* AppDelegate.swift */,
 				C9FE1AE52011ED92002ABC12 /* Main(主要) */,
 				C9FE1AE32011ED92002ABC12 /* Home(首页) */,
-				C9FE1AE12011ED92002ABC12 /* Discover(发现) */,
 				C9FE1AE72011ED92002ABC12 /* Message(消息) */,
+				C9FE1AE12011ED92002ABC12 /* Discover(发现) */,
 				C9FE1AE92011ED92002ABC12 /* Profile(我) */,
 			);
 			path = Classes;
@@ -135,6 +163,8 @@
 		C9FE1AE12011ED92002ABC12 /* Discover(发现) */ = {
 			isa = PBXGroup;
 			children = (
+				C9BDC8B22016D0F400CE3FEB /* Discover.storyboard */,
+				C9FE1AF62011F5D5002ABC12 /* DiscoverViewController.swift */,
 			);
 			path = "Discover(发现)";
 			sourceTree = "<group>";
@@ -142,6 +172,8 @@
 		C9FE1AE32011ED92002ABC12 /* Home(首页) */ = {
 			isa = PBXGroup;
 			children = (
+				C9BDC8AD2016CF0C00CE3FEB /* Home.storyboard */,
+				C9FE1AF42011F5C4002ABC12 /* HomeViewController.swift */,
 			);
 			path = "Home(首页)";
 			sourceTree = "<group>";
@@ -149,6 +181,8 @@
 		C9FE1AE52011ED92002ABC12 /* Main(主要) */ = {
 			isa = PBXGroup;
 			children = (
+				C92EEA7F2011CF32008F8BE1 /* Main.storyboard */,
+				C9FE1AF02011F447002ABC12 /* MainViewController.swift */,
 			);
 			path = "Main(主要)";
 			sourceTree = "<group>";
@@ -156,6 +190,8 @@
 		C9FE1AE72011ED92002ABC12 /* Message(消息) */ = {
 			isa = PBXGroup;
 			children = (
+				C9BDC8B92016D50600CE3FEB /* Message.storyboard */,
+				C9FE1AF82011F5E4002ABC12 /* MessageViewController.swift */,
 			);
 			path = "Message(消息)";
 			sourceTree = "<group>";
@@ -163,6 +199,8 @@
 		C9FE1AE92011ED92002ABC12 /* Profile(我) */ = {
 			isa = PBXGroup;
 			children = (
+				C9BDC8BB2016D52C00CE3FEB /* Profile.storyboard */,
+				C9FE1AFA2011F5FA002ABC12 /* ProfileViewController.swift */,
 			);
 			path = "Profile(我)";
 			sourceTree = "<group>";
@@ -276,6 +314,11 @@
 			files = (
 				C92EEA832011CF32008F8BE1 /* Assets.xcassets in Resources */,
 				C92EEA812011CF32008F8BE1 /* Main.storyboard in Resources */,
+				C924E7512015BC2C00D1F912 /* MainVCSettings.json in Resources */,
+				C9BDC8AE2016CF0C00CE3FEB /* Home.storyboard in Resources */,
+				C9BDC8B32016D0F400CE3FEB /* Discover.storyboard in Resources */,
+				C9BDC8BC2016D52D00CE3FEB /* Profile.storyboard in Resources */,
+				C9BDC8BA2016D50600CE3FEB /* Message.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,7 +343,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9FE1AFB2011F5FA002ABC12 /* ProfileViewController.swift in Sources */,
 				C92EEA7C2011CF32008F8BE1 /* AppDelegate.swift in Sources */,
+				C9FE1AF72011F5D5002ABC12 /* DiscoverViewController.swift in Sources */,
+				C9FE1AF12011F447002ABC12 /* MainViewController.swift in Sources */,
+				C9FE1AF52011F5C4002ABC12 /* HomeViewController.swift in Sources */,
+				C9FE1AF92011F5E4002ABC12 /* MessageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
