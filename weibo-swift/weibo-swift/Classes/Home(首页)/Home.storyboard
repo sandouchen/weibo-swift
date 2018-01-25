@@ -12,11 +12,30 @@
         <!--首页-->
         <scene sceneID="6sp-3q-n3w">
             <objects>
-                <tableViewController id="lEE-Pm-rak" sceneMemberID="viewController">
+                <tableViewController id="lEE-Pm-rak" customClass="HomeViewController" customModule="weibo_swift" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="cQc-5Q-dXV">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="homeCell" id="ftk-KN-qDC">
+                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ftk-KN-qDC" id="jC8-rO-K7w">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PRb-Rf-n0N">
+                                            <rect key="frame" x="261" y="6" width="51" height="31"/>
+                                        </switch>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="PRb-Rf-n0N" firstAttribute="centerY" secondItem="jC8-rO-K7w" secondAttribute="centerY" id="Pjt-zR-BLc"/>
+                                        <constraint firstAttribute="trailing" secondItem="PRb-Rf-n0N" secondAttribute="trailing" constant="10" id="Wwh-yu-Xap"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
                             <outlet property="dataSource" destination="lEE-Pm-rak" id="5D5-R0-p7H"/>
                             <outlet property="delegate" destination="lEE-Pm-rak" id="tah-AZ-Hsz"/>

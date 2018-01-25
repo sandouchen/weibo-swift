@@ -1,0 +1,43 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - MBProgressHUD (1.0.0)
+  - Popover (1.0.6)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
+  - SnapKit (4.0.0)
+  - SVProgressHUD (2.1.2)
+
+DEPENDENCIES:
+  - AFNetworking
+  - MBProgressHUD
+  - Popover
+  - SDWebImage
+  - SnapKit (~> 4.0.0)
+  - SVProgressHUD
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
+  Popover: 227aa929a6cdf41c4828786be8ede109c40344c9
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+
+PODFILE CHECKSUM: 13af3811726f1c6c7a8b5ce2701144a50655c2a4
+
+COCOAPODS: 1.2.1.beta.1

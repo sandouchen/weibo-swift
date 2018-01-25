@@ -8,12 +8,12 @@
 
 import UIKit
 
-class ProfileViewController: UITableViewController {
+class ProfileViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.brown
         
+        visitorView.setupVisitorViewInfo(iconName: "visitordiscover_image_profile", tipTitle: "登陆后，别人评论你的微博，个人资料会在这里显示")
     }
 
     // MARK: - Table view data source

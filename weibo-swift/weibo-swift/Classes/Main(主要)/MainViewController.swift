@@ -9,15 +9,36 @@
 import UIKit
 
 class MainViewController: UITabBarController {
+    
+    /// 发布按钮
+    private lazy var composeBtn = UIButton(imageName: "tabbar_compose_icon_add", bgImageName: "tabbar_compose_button")
 
     override func viewDidLoad() {
         super.viewDidLoad()
 //        setupTabBarVc()
         
-        
-        
+        setupComposeBtn()
     }
-    
+}
+
+// MARK: - 设置发布按钮
+extension MainViewController {
+    /// 设置发布按钮
+    private func setupComposeBtn() {
+        tabBar.addSubview(composeBtn)
+        
+        composeBtn.center = CGPoint(x: tabBar.center.x, y: tabBar.bounds.size.height * 0.5)
+        
+        composeBtn.addTarget(self, action: #selector(MainViewController.composeBtnClick), for: .touchUpInside)
+    }
+}
+
+// MARK: - 事件监听
+extension MainViewController {
+    /// 发布按钮点击事件
+    @objc private func composeBtnClick() {
+        SDLog("composeBtnClick")
+    }
 }
 
 // MARK: - 初始化TabBarVc
@@ -34,7 +55,7 @@ extension MainViewController {
 // MARK: - 重写 addChildViewController
 extension MainViewController {
     /// 重写 addChildViewController
-    private func addChildViewController(childVc: UIViewController, title : String, imageName : String) {
+    private func addChildViewController(childVc: UIViewController, title: String, imageName: String) {
         childVc.title = title
         childVc.tabBarItem.image = UIImage(named: imageName)
         childVc.tabBarItem.selectedImage = UIImage(named: imageName + "_highlighted")

@@ -8,12 +8,12 @@
 
 import UIKit
 
-class MessageViewController: UITableViewController {
+class MessageViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .blue
         
+        visitorView.setupVisitorViewInfo(iconName: "visitordiscover_image_message", tipTitle: "登陆后，别人评论你的微博，给你发消息，都会在这里收到通知")
     }
 
     // MARK: - Table view data source
