@@ -13,9 +13,10 @@ class BaseViewController: UITableViewController {
     /// 访客界面 View
     lazy var visitorView = VisitorView.visitorView()
     
-    var isLogin = true
+    var isLogin = UserAccountTool.shareInstance.isLogin
     
     override func loadView() {
+        // 判断加载哪个 view
         isLogin ? super.loadView() : setupVisitorView()
     }
     
@@ -53,8 +54,14 @@ extension BaseViewController {
     /// 登陆按钮点击事件
     @objc private func loginBtnClick() {
         SDLog("loginBtnClick")
+        
+        let oauthVc = OAuthViewController()
+        let oauthNav = UINavigationController(rootViewController: oauthVc)
+        
+        present(oauthNav, animated: true, completion: nil)
     }
 }
+
 
 
 

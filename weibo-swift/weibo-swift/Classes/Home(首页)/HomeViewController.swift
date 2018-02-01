@@ -16,18 +16,26 @@ class HomeViewController: BaseViewController {
     
     /// 懒加载 popoverTableView
     lazy var popoverTableView = UITableView()
+    
+    private lazy var viewModels: [StatusViewModel] = [StatusViewModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // 访客页面动画
         visitorView.addRotationAnim()
         
+        if !isLogin { return }
+        
         // 初始化导航栏按钮
         setupNavigationBar()
         
+        // 请求数据
+        loadStatuses()
+        
+        // 设定 tableView 自适应高度
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 200
     }
-    
-
 }
 
 // MARK: - 设置 UI 界面
@@ -42,8 +50,8 @@ extension HomeViewController {
         titleBtn.setTitleColor(.black, for: .normal)
         titleBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 15)
         titleBtn.addTarget(self, action: #selector(HomeViewController.titleBtnClick), for: .touchUpInside)
-        titleBtn.set(imageName: UIImage(named: "navigationbar_arrow_down"), title: "sandou", titlePosition: .left, additionalSpacing: 8, state: .normal)
-        titleBtn.set(imageName: UIImage(named: "navigationbar_arrow_up"), title: "sandou", titlePosition: .left, additionalSpacing: 8, state: .selected)
+        titleBtn.set(imageName: UIImage(named: "navigationbar_arrow_down"), title: (UserAccountTool.shareInstance.account?.screen_name)!, titlePosition: .left, additionalSpacing: 8, state: .normal)
+        titleBtn.set(imageName: UIImage(named: "navigationbar_arrow_up"), title: (UserAccountTool.shareInstance.account?.screen_name)!, titlePosition: .left, additionalSpacing: 8, state: .selected)
         titleBtn.sizeToFit()
         titleBtn.adjustsImageWhenHighlighted = false
         navigationItem.titleView = titleBtn
@@ -70,8 +78,8 @@ extension HomeViewController {
         popoverTableView.frame = CGRect(x: 0, y: 0, width: width, height: width + 30)
         popoverTableView.contentInset = UIEdgeInsetsMake(10, 0, 0, 0)
         popoverTableView.scrollIndicatorInsets = popoverTableView.contentInset
-        popoverTableView.dataSource = self
-        popoverTableView.delegate = self
+//        popoverTableView.dataSource = self
+//        popoverTableView.delegate = self
         
         let popoverView = Popover(options: nil, showHandler: nil)
         popoverView.popoverColor = UIColor(red: 76/255, green: 76/255, blue: 76/255, alpha: 1)
@@ -101,53 +109,50 @@ extension HomeViewController {
     }
 }
 
+// MARK: - 请求数据
+extension HomeViewController {
+    /// 请求数据
+    private func loadStatuses() {
+        NetWorkTools.shareInstance.loadNewWeiBo { (result, error) in
+            if error != nil {
+                SDLog(error)
+                return
+            }
+            
+            guard let resultArray = result else {
+                SDLog("没有数据")
+                return
+            }
+            
+            for statusDict in resultArray {
+                let status = StatusModel(dict: statusDict)
+                let viewModel = StatusViewModel(status: status)
+                
+                self.viewModels.append(viewModel)
+            }
+            
+            self.tableView.reloadData()
+        }
+    }
+}
+
 // MARK: - tableView 的数据源与代理
 extension HomeViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        if tableView == popoverTableView {
-            return 5
-        }
-        
-        return 50
+        return viewModels.count
     }
     
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "homeCell") as! HomeViewCell
         
-        if tableView == popoverTableView {
-            let popoverCell = "popoverCell"
-            
-            var cell = tableView.dequeueReusableCell(withIdentifier: popoverCell)
-            
-            if cell == nil {
-                cell = UITableViewCell(style: .default, reuseIdentifier: popoverCell)
-            }
-            
-            cell?.selectionStyle = .none
-            cell?.backgroundColor = .clear
-            cell?.textLabel?.textColor = .white
-            cell?.textLabel?.text = "数据 \(indexPath.row)"
-            
-            return cell!
-            
-        } else {
-            let homeCell = "homeCell"
-            
-            let cell = tableView.dequeueReusableCell(withIdentifier: homeCell)
-            
-            cell?.textLabel?.text = "数据 \(indexPath.row)"
-            
-            return cell!
-        }
+            cell.viewModel = viewModels[indexPath.row]
+            return cell
      }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if tableView == popoverTableView {
-            SDLog("点击了第 \(indexPath.row) 行")
-        } else {
-            tableView.deselectRow(at: indexPath, animated: true)
-            SDLog("点击了第 \(indexPath.row) 行")
-        }
+        tableView.deselectRow(at: indexPath, animated: true)
+        SDLog("点击了第 \(indexPath.row) 行")
     }
 }
 

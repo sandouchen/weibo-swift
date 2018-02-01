@@ -8,22 +8,27 @@
 
 import UIKit
 
+let mainColor = UIColor(red: 253/255, green: 109/255, blue: 9/255, alpha: 1)
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var defaultVc: UIViewController? {
+        let isLogin = UserAccountTool.shareInstance.isLogin
+        
+        return isLogin ? WelcomeViewController() : UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
+    }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        /* 手动创建 Window
-        UITabBar.appearance().tintColor = UIColor(red: 253/255, green: 109/255, blue: 9/255, alpha: 1)
-
+        UINavigationBar.appearance().tintColor = mainColor
+        
+        UITabBar.appearance().tintColor = mainColor
+        
         window = UIWindow(frame: UIScreen.main.bounds)
         
-        window?.rootViewController = MainViewController()
+        window?.rootViewController = defaultVc
         window?.makeKeyAndVisible()
-        */
-        
-        UINavigationBar.appearance().tintColor = UIColor(red: 253/255, green: 109/255, blue: 9/255, alpha: 1)
         
         return true
     }
