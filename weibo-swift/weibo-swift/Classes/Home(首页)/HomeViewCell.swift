@@ -4,13 +4,12 @@
 //
 //  Created by fqq3 on 2018/2/1.
 //  Copyright © 2018年 sandouchan. All rights reserved.
-//
+// 07 获取转发数据
 
 import UIKit
 import SDWebImage
 
 private let edgeMargin : CGFloat = 10
-private let itemMargin : CGFloat = 10
 
 class HomeViewCell: UITableViewCell {
     // MARK:- 控件属性
@@ -21,7 +20,7 @@ class HomeViewCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var sourceLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
-    @IBOutlet weak var picView: UICollectionView!
+    @IBOutlet weak var picView: PicCollectionView!
     
     // MARK:- 约束的属性
     @IBOutlet weak var picViewHCons: NSLayoutConstraint!
@@ -67,7 +66,7 @@ class HomeViewCell: UITableViewCell {
             picViewHCons.constant = picViewSize.height
             
             // 11.将picURL数据传递给picView
-            
+            picView.picURLs = viewModel.picURLs
             
             
         }
@@ -93,14 +92,31 @@ extension HomeViewCell {
         picViewBottomCons.constant = 10
         
         // 2.取出picView对应的layout
-        let layout = picView.collectionViewLayout
+        let layout = picView.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        // 3.单张配图
+        if count == 1 {
+            // 1.取出图片
+            let urlStr = viewModel?.picURLs.last?.absoluteString
+
+            let image = SDWebImageManager.shared().imageCache?.imageFromDiskCache(forKey: urlStr)
+            
+            if let image = image {
+                layout.itemSize = CGSize(width: image.size.width * 2, height: image.size.height * 2)
+                
+                return CGSize(width: image.size.width * 2, height: image.size.height * 2)
+            }
+        }
         
         // 4.计算出来imageViewWH
-        let imageViewWH = (UIScreen.main.bounds.width - 2 * edgeMargin - 2 * itemMargin) / 3
+        let imageViewWH = (UIScreen.main.bounds.width - 4 * edgeMargin) / 3
+        
+        // 5.设置其他张图片时layout的itemSize
+        layout.itemSize = CGSize(width: imageViewWH, height: imageViewWH)
         
         // 6.四张配图
         if count == 4 {
-            let picViewWH = imageViewWH * 2 + itemMargin
+            let picViewWH = imageViewWH * 2 + edgeMargin
             
             return CGSize(width: picViewWH, height: picViewWH)
         }
@@ -110,7 +126,7 @@ extension HomeViewCell {
         let rows = CGFloat((count - 1) / 3 + 1)
         
         // 7.2.计算picView的高度
-        let picViewH = rows * imageViewWH + (rows - 1) * itemMargin
+        let picViewH = rows * imageViewWH + (rows - 1) * edgeMargin
         
         // 7.3.计算picView的宽度
         let picViewW = UIScreen.main.bounds.width - 2 * edgeMargin

@@ -8,6 +8,7 @@
 
 import UIKit
 import Popover
+import SDWebImage
 
 class HomeViewController: BaseViewController {
     
@@ -131,6 +132,30 @@ extension HomeViewController {
                 self.viewModels.append(viewModel)
             }
             
+            self.cacheImages(viewModels: self.viewModels)
+        }
+    }
+    
+    /// 缓存图片
+    private func cacheImages(viewModels : [StatusViewModel]) {
+        // 0.创建group
+        let group = DispatchGroup()
+        
+        // 1.缓存图片
+        for viewModel in viewModels {
+            for picURL in viewModel.picURLs {
+                group.enter()
+                
+                SDWebImageManager.shared().imageDownloader?.downloadImage(with: picURL, options: [], progress: nil, completed: { (_, _, _, _) in
+                    SDLog("已下载图片")
+                    group.leave()
+                })
+            }
+        }
+        
+        // 2.刷新表格
+        group.notify(queue: DispatchQueue.main) {
+            print("刷新表格")
             self.tableView.reloadData()
         }
     }

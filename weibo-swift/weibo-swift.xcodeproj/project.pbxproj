@@ -22,6 +22,7 @@
 		C98FFCDD2022BDC10072FB4A /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FFCDC2022BDC10072FB4A /* UserModel.swift */; };
 		C98FFCDF2022C3F30072FB4A /* StatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FFCDE2022C3F30072FB4A /* StatusViewModel.swift */; };
 		C98FFCE12022F4130072FB4A /* HomeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FFCE02022F4130072FB4A /* HomeViewCell.swift */; };
+		C98FFCE32023229B0072FB4A /* PicCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98FFCE22023229B0072FB4A /* PicCollectionView.swift */; };
 		C9BDC8AE2016CF0C00CE3FEB /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9BDC8AD2016CF0C00CE3FEB /* Home.storyboard */; };
 		C9BDC8B32016D0F400CE3FEB /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9BDC8B22016D0F400CE3FEB /* Discover.storyboard */; };
 		C9BDC8BA2016D50600CE3FEB /* Message.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9BDC8B92016D50600CE3FEB /* Message.storyboard */; };
@@ -86,6 +87,7 @@
 		C98FFCDC2022BDC10072FB4A /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		C98FFCDE2022C3F30072FB4A /* StatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusViewModel.swift; sourceTree = "<group>"; };
 		C98FFCE02022F4130072FB4A /* HomeViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewCell.swift; sourceTree = "<group>"; };
+		C98FFCE22023229B0072FB4A /* PicCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicCollectionView.swift; sourceTree = "<group>"; };
 		C9BDC8AD2016CF0C00CE3FEB /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		C9BDC8B22016D0F400CE3FEB /* Discover.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		C9BDC8B92016D50600CE3FEB /* Message.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Message.storyboard; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 				C9BDC8AD2016CF0C00CE3FEB /* Home.storyboard */,
 				C9FE1AF42011F5C4002ABC12 /* HomeViewController.swift */,
 				C98FFCE02022F4130072FB4A /* HomeViewCell.swift */,
+				C98FFCE22023229B0072FB4A /* PicCollectionView.swift */,
 				C98FFCD8202069B90072FB4A /* StatusModel.swift */,
 				C98FFCDC2022BDC10072FB4A /* UserModel.swift */,
 				C98FFCDE2022C3F30072FB4A /* StatusViewModel.swift */,
@@ -553,6 +556,7 @@
 				C9FE1AF72011F5D5002ABC12 /* DiscoverViewController.swift in Sources */,
 				C98FFCD62020255A0072FB4A /* WelcomeViewController.swift in Sources */,
 				C9FE1AF12011F447002ABC12 /* MainViewController.swift in Sources */,
+				C98FFCE32023229B0072FB4A /* PicCollectionView.swift in Sources */,
 				C9FA6E26201B1D29007BA529 /* Common.swift in Sources */,
 				C9E03F2720171286009363FB /* BaseViewController.swift in Sources */,
 				C9E03F3320185C0C009363FB /* PopoverViewController.swift in Sources */,

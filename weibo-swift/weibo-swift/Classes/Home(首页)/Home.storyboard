@@ -149,27 +149,41 @@
                                                 <constraint firstItem="uKm-C0-Iv1" firstAttribute="height" secondItem="U2x-Jh-a3m" secondAttribute="height" id="u7h-vJ-28z"/>
                                             </constraints>
                                         </view>
-                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jiS-ks-ZxM">
+                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jiS-ks-ZxM" customClass="PicCollectionView" customModule="weibo_swift" customModuleProvider="target">
                                             <rect key="frame" x="10" y="160" width="240" height="60.5"/>
-                                            <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="60" id="G0K-5K-YOf"/>
                                                 <constraint firstAttribute="width" constant="240" id="waA-dz-IxJ"/>
                                             </constraints>
-                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ocl-bn-YJM">
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="ocl-bn-YJM">
                                                 <size key="itemSize" width="50" height="50"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             </collectionViewFlowLayout>
                                             <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="7A5-9U-gzi">
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PicCell" id="7A5-9U-gzi" customClass="PicCollectionViewCell" customModule="weibo_swift" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                         <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="045-bS-Hn2">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                            </imageView>
+                                                        </subviews>
                                                     </view>
+                                                    <constraints>
+                                                        <constraint firstItem="045-bS-Hn2" firstAttribute="top" secondItem="7A5-9U-gzi" secondAttribute="top" id="Gg9-sn-0xY"/>
+                                                        <constraint firstItem="045-bS-Hn2" firstAttribute="leading" secondItem="7A5-9U-gzi" secondAttribute="leading" id="YRb-Vo-Ag6"/>
+                                                        <constraint firstAttribute="bottom" secondItem="045-bS-Hn2" secondAttribute="bottom" id="a6P-4r-dBV"/>
+                                                        <constraint firstAttribute="trailing" secondItem="045-bS-Hn2" secondAttribute="trailing" id="tyh-dL-V62"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="iconVIew" destination="045-bS-Hn2" id="mGa-D7-OUp"/>
+                                                    </connections>
                                                 </collectionViewCell>
                                             </cells>
                                         </collectionView>
@@ -183,7 +197,7 @@
                                         <constraint firstItem="3As-ag-gxE" firstAttribute="top" secondItem="DPR-qR-WVf" secondAttribute="top" id="MH2-Dc-nZo"/>
                                         <constraint firstItem="tOB-mb-rUG" firstAttribute="trailing" secondItem="DPR-qR-WVf" secondAttribute="trailing" id="NRr-vd-yNB"/>
                                         <constraint firstItem="tOB-mb-rUG" firstAttribute="bottom" secondItem="DPR-qR-WVf" secondAttribute="bottom" id="TmA-2J-AWJ"/>
-                                        <constraint firstItem="jfK-tZ-OsU" firstAttribute="top" secondItem="jiS-ks-ZxM" secondAttribute="bottom" priority="750" constant="10" id="Z1Q-XG-4Ay"/>
+                                        <constraint firstItem="jfK-tZ-OsU" firstAttribute="top" secondItem="jiS-ks-ZxM" secondAttribute="bottom" priority="700" constant="10" id="Z1Q-XG-4Ay"/>
                                         <constraint firstAttribute="bottom" secondItem="jfK-tZ-OsU" secondAttribute="bottom" id="atk-8i-28W"/>
                                         <constraint firstItem="FqH-8d-yc9" firstAttribute="leading" secondItem="uzR-Qu-U8a" secondAttribute="trailing" constant="10" id="b23-IH-aeZ"/>
                                         <constraint firstItem="uzR-Qu-U8a" firstAttribute="bottom" secondItem="DPR-qR-WVf" secondAttribute="bottom" id="cYM-cB-YGO"/>
