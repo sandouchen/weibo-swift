@@ -18,11 +18,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="homeCell" rowHeight="271" id="ftk-KN-qDC" customClass="HomeViewCell" customModule="weibo_swift" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="320" height="271"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="homeCell" rowHeight="377" id="ftk-KN-qDC" customClass="HomeViewCell" customModule="weibo_swift" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="377"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ftk-KN-qDC" id="jC8-rO-K7w">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="270.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="376.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="avatar_default_small" translatesAutoresizingMaskIntoConstraints="NO" id="DPR-qR-WVf">
@@ -64,8 +64,8 @@
                                             <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="来自 iPhone7" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FqH-8d-yc9" userLabel="来源的Label">
-                                            <rect key="frame" x="120" y="35" width="74" height="15"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="来自 iPhone7来自" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FqH-8d-yc9" userLabel="来源的Label">
+                                            <rect key="frame" x="120" y="35" width="98" height="15"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <color key="textColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -76,8 +76,8 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jfK-tZ-OsU">
-                                            <rect key="frame" x="0.0" y="230.5" width="320" height="40"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jfK-tZ-OsU" userLabel="底部工具条">
+                                            <rect key="frame" x="0.0" y="336.5" width="320" height="40"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U2x-Jh-a3m">
                                                     <rect key="frame" x="0.0" y="1" width="106.5" height="32"/>
@@ -149,14 +149,18 @@
                                                 <constraint firstItem="uKm-C0-Iv1" firstAttribute="height" secondItem="U2x-Jh-a3m" secondAttribute="height" id="u7h-vJ-28z"/>
                                             </constraints>
                                         </view>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Knb-Oe-hB5" userLabel="转发的背景">
+                                            <rect key="frame" x="0.0" y="158" width="320" height="178.5"/>
+                                            <color key="backgroundColor" red="0.97254901959999995" green="0.97254901959999995" blue="0.97254901959999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </view>
                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="jiS-ks-ZxM" customClass="PicCollectionView" customModule="weibo_swift" customModuleProvider="target">
-                                            <rect key="frame" x="10" y="160" width="240" height="60.5"/>
+                                            <rect key="frame" x="10" y="266" width="240" height="60.5"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="60" id="G0K-5K-YOf"/>
                                                 <constraint firstAttribute="width" constant="240" id="waA-dz-IxJ"/>
                                             </constraints>
-                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="0.0" id="ocl-bn-YJM">
+                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="3" minimumInteritemSpacing="0.0" id="ocl-bn-YJM">
                                                 <size key="itemSize" width="50" height="50"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -187,16 +191,29 @@
                                                 </collectionViewCell>
                                             </cells>
                                         </collectionView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="今天天气不错噢今天天气不错噢今天天气不错噢今天天气不错噢今天天气不错噢今天天气不错噢今天天气不错噢今天天气不错噢今天天气不错噢今天天气不错噢今天天气不错噢" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jWI-y9-oBZ" userLabel="转发正文">
+                                            <rect key="frame" x="10" y="165" width="300" height="91"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="jfK-tZ-OsU" firstAttribute="top" secondItem="Knb-Oe-hB5" secondAttribute="bottom" id="0GF-d8-59J"/>
+                                        <constraint firstAttribute="trailing" secondItem="Knb-Oe-hB5" secondAttribute="trailing" id="2XC-C9-E4r"/>
+                                        <constraint firstItem="Knb-Oe-hB5" firstAttribute="leading" secondItem="jC8-rO-K7w" secondAttribute="leading" id="6uB-5j-YiI"/>
                                         <constraint firstItem="jiS-ks-ZxM" firstAttribute="leading" secondItem="DPR-qR-WVf" secondAttribute="leading" id="7fj-lm-NfC"/>
-                                        <constraint firstItem="jiS-ks-ZxM" firstAttribute="top" secondItem="0Lh-Kw-Afg" secondAttribute="bottom" constant="10" id="HOB-CE-uEv"/>
                                         <constraint firstItem="DPR-qR-WVf" firstAttribute="top" secondItem="jC8-rO-K7w" secondAttribute="top" constant="10" id="IEr-cx-6X4"/>
                                         <constraint firstItem="0Lh-Kw-Afg" firstAttribute="top" secondItem="DPR-qR-WVf" secondAttribute="bottom" constant="10" id="JyE-Oy-agC"/>
                                         <constraint firstItem="uzR-Qu-U8a" firstAttribute="leading" secondItem="3As-ag-gxE" secondAttribute="leading" id="Jzs-Wl-gfv"/>
+                                        <constraint firstItem="jWI-y9-oBZ" firstAttribute="leading" secondItem="DPR-qR-WVf" secondAttribute="leading" id="LZ7-eT-qFV"/>
                                         <constraint firstItem="3As-ag-gxE" firstAttribute="top" secondItem="DPR-qR-WVf" secondAttribute="top" id="MH2-Dc-nZo"/>
                                         <constraint firstItem="tOB-mb-rUG" firstAttribute="trailing" secondItem="DPR-qR-WVf" secondAttribute="trailing" id="NRr-vd-yNB"/>
+                                        <constraint firstItem="Knb-Oe-hB5" firstAttribute="top" secondItem="0Lh-Kw-Afg" secondAttribute="bottom" constant="8" id="Nth-Ga-Yba"/>
+                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="FqH-8d-yc9" secondAttribute="trailing" constant="10" id="O8Q-mD-W6s"/>
+                                        <constraint firstItem="jWI-y9-oBZ" firstAttribute="top" secondItem="0Lh-Kw-Afg" secondAttribute="bottom" constant="15" id="Ov8-0O-4QS"/>
                                         <constraint firstItem="tOB-mb-rUG" firstAttribute="bottom" secondItem="DPR-qR-WVf" secondAttribute="bottom" id="TmA-2J-AWJ"/>
+                                        <constraint firstItem="jiS-ks-ZxM" firstAttribute="top" secondItem="jWI-y9-oBZ" secondAttribute="bottom" constant="10" id="VOd-vu-Z2S"/>
                                         <constraint firstItem="jfK-tZ-OsU" firstAttribute="top" secondItem="jiS-ks-ZxM" secondAttribute="bottom" priority="700" constant="10" id="Z1Q-XG-4Ay"/>
                                         <constraint firstAttribute="bottom" secondItem="jfK-tZ-OsU" secondAttribute="bottom" id="atk-8i-28W"/>
                                         <constraint firstItem="FqH-8d-yc9" firstAttribute="leading" secondItem="uzR-Qu-U8a" secondAttribute="trailing" constant="10" id="b23-IH-aeZ"/>
@@ -211,6 +228,7 @@
                                         <constraint firstItem="HSO-9I-UUr" firstAttribute="leading" secondItem="3As-ag-gxE" secondAttribute="trailing" constant="10" id="snv-1e-ZeO"/>
                                         <constraint firstItem="3As-ag-gxE" firstAttribute="leading" secondItem="DPR-qR-WVf" secondAttribute="trailing" constant="10" id="w5E-8p-DgW"/>
                                         <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="HSO-9I-UUr" secondAttribute="trailing" constant="10" id="z8M-Rq-qJr"/>
+                                        <constraint firstAttribute="trailing" secondItem="jWI-y9-oBZ" secondAttribute="trailing" constant="10" id="zHY-mb-hfa"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -220,6 +238,9 @@
                                     <outlet property="picViewBottomCons" destination="Z1Q-XG-4Ay" id="gvZ-qm-1D5"/>
                                     <outlet property="picViewHCons" destination="G0K-5K-YOf" id="5JB-Bn-Fvq"/>
                                     <outlet property="picViewWCons" destination="waA-dz-IxJ" id="GHl-AH-xxM"/>
+                                    <outlet property="retweetedBgView" destination="Knb-Oe-hB5" id="gz9-yR-qCO"/>
+                                    <outlet property="retweetedContentLabel" destination="jWI-y9-oBZ" id="N8a-85-VOw"/>
+                                    <outlet property="retweetedContentLabelTopCons" destination="Ov8-0O-4QS" id="aqd-HU-zFi"/>
                                     <outlet property="screenNameLabel" destination="3As-ag-gxE" id="LdL-tf-nM8"/>
                                     <outlet property="sourceLabel" destination="FqH-8d-yc9" id="30e-kH-iaa"/>
                                     <outlet property="timeLabel" destination="uzR-Qu-U8a" id="mbo-Ed-NNR"/>

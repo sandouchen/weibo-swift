@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		3C710034E6E5B25AD63E0D9D /* Pods_weibo_swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 751D998DC01F31BA7A98FDE6 /* Pods_weibo_swift.framework */; };
+		C90AE86D20295B7000FC0EEC /* ComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AE86B20295B7000FC0EEC /* ComposeViewController.swift */; };
+		C90AE86E20295B7000FC0EEC /* ComposeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90AE86C20295B7000FC0EEC /* ComposeViewController.xib */; };
+		C90AE87020297FD800FC0EEC /* ComposeTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AE86F20297FD800FC0EEC /* ComposeTitleView.swift */; };
+		C90AE87220297FE600FC0EEC /* ComposeTitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90AE87120297FE600FC0EEC /* ComposeTitleView.xib */; };
+		C90AE874202A942B00FC0EEC /* ComposeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AE873202A942A00FC0EEC /* ComposeTextView.swift */; };
+		C90AE876202AF06F00FC0EEC /* PicPickerCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AE875202AF06F00FC0EEC /* PicPickerCollectionView.swift */; };
+		C90AE879202AF84A00FC0EEC /* PicPickerViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90AE877202AF84A00FC0EEC /* PicPickerViewCell.swift */; };
+		C90AE87A202AF84A00FC0EEC /* PicPickerViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C90AE878202AF84A00FC0EEC /* PicPickerViewCell.xib */; };
 		C924E7512015BC2C00D1F912 /* MainVCSettings.json in Resources */ = {isa = PBXBuildFile; fileRef = C924E7502015BC2B00D1F912 /* MainVCSettings.json */; };
 		C92EEA7C2011CF32008F8BE1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92EEA7B2011CF32008F8BE1 /* AppDelegate.swift */; };
 		C92EEA812011CF32008F8BE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C92EEA7F2011CF32008F8BE1 /* Main.storyboard */; };
@@ -67,6 +75,14 @@
 		47610D4735F89115182FC164 /* Pods-weibo-swift.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weibo-swift.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weibo-swift/Pods-weibo-swift.debug.xcconfig"; sourceTree = "<group>"; };
 		617E835C8BF34D31733CB566 /* Pods_weibo_swiftUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weibo_swiftUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		751D998DC01F31BA7A98FDE6 /* Pods_weibo_swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weibo_swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C90AE86B20295B7000FC0EEC /* ComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeViewController.swift; sourceTree = "<group>"; };
+		C90AE86C20295B7000FC0EEC /* ComposeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComposeViewController.xib; sourceTree = "<group>"; };
+		C90AE86F20297FD800FC0EEC /* ComposeTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeTitleView.swift; sourceTree = "<group>"; };
+		C90AE87120297FE600FC0EEC /* ComposeTitleView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ComposeTitleView.xib; sourceTree = "<group>"; };
+		C90AE873202A942A00FC0EEC /* ComposeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposeTextView.swift; sourceTree = "<group>"; };
+		C90AE875202AF06F00FC0EEC /* PicPickerCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPickerCollectionView.swift; sourceTree = "<group>"; };
+		C90AE877202AF84A00FC0EEC /* PicPickerViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PicPickerViewCell.swift; sourceTree = "<group>"; };
+		C90AE878202AF84A00FC0EEC /* PicPickerViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PicPickerViewCell.xib; sourceTree = "<group>"; };
 		C924E7502015BC2B00D1F912 /* MainVCSettings.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = MainVCSettings.json; sourceTree = "<group>"; };
 		C92EEA782011CF32008F8BE1 /* weibo-swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weibo-swift.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C92EEA7B2011CF32008F8BE1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -156,6 +172,21 @@
 				F07F1D3B66B844B23B50D643 /* Pods-weibo-swift.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		C90AE86A20295B3B00FC0EEC /* Compose */ = {
+			isa = PBXGroup;
+			children = (
+				C90AE86C20295B7000FC0EEC /* ComposeViewController.xib */,
+				C90AE86B20295B7000FC0EEC /* ComposeViewController.swift */,
+				C90AE873202A942A00FC0EEC /* ComposeTextView.swift */,
+				C90AE86F20297FD800FC0EEC /* ComposeTitleView.swift */,
+				C90AE87120297FE600FC0EEC /* ComposeTitleView.xib */,
+				C90AE875202AF06F00FC0EEC /* PicPickerCollectionView.swift */,
+				C90AE877202AF84A00FC0EEC /* PicPickerViewCell.swift */,
+				C90AE878202AF84A00FC0EEC /* PicPickerViewCell.xib */,
+			);
+			path = Compose;
 			sourceTree = "<group>";
 		};
 		C924E74F2015BC2B00D1F912 /* Resource */ = {
@@ -291,6 +322,7 @@
 			children = (
 				C92EEA7B2011CF32008F8BE1 /* AppDelegate.swift */,
 				C9FE1AE52011ED92002ABC12 /* Main(主要) */,
+				C90AE86A20295B3B00FC0EEC /* Compose */,
 				C9FE1AE32011ED92002ABC12 /* Home(首页) */,
 				C9FE1AE72011ED92002ABC12 /* Message(消息) */,
 				C9FE1AE12011ED92002ABC12 /* Discover(发现) */,
@@ -466,10 +498,13 @@
 				C9FA6E24201B0CAE007BA529 /* OAuthViewController.xib in Resources */,
 				C92EEA832011CF32008F8BE1 /* Assets.xcassets in Resources */,
 				C92EEA812011CF32008F8BE1 /* Main.storyboard in Resources */,
+				C90AE87220297FE600FC0EEC /* ComposeTitleView.xib in Resources */,
 				C9E03F3420185C0C009363FB /* PopoverViewController.xib in Resources */,
 				C924E7512015BC2C00D1F912 /* MainVCSettings.json in Resources */,
 				C98FFCD72020255A0072FB4A /* WelcomeViewController.xib in Resources */,
+				C90AE87A202AF84A00FC0EEC /* PicPickerViewCell.xib in Resources */,
 				C9E03F2B20171411009363FB /* VisitorView.xib in Resources */,
+				C90AE86E20295B7000FC0EEC /* ComposeViewController.xib in Resources */,
 				C9BDC8AE2016CF0C00CE3FEB /* Home.storyboard in Resources */,
 				C9BDC8B32016D0F400CE3FEB /* Discover.storyboard in Resources */,
 				C9BDC8BC2016D52D00CE3FEB /* Profile.storyboard in Resources */,
@@ -549,12 +584,15 @@
 				C9E03F2F20174369009363FB /* UIBarButtonItem-Extension.swift in Sources */,
 				C98FFCDF2022C3F30072FB4A /* StatusViewModel.swift in Sources */,
 				C9FE1AFB2011F5FA002ABC12 /* ProfileViewController.swift in Sources */,
+				C90AE879202AF84A00FC0EEC /* PicPickerViewCell.swift in Sources */,
+				C90AE86D20295B7000FC0EEC /* ComposeViewController.swift in Sources */,
 				C9E03F202016E6E8009363FB /* UIButton-Extension.swift in Sources */,
 				C98FFCDB2022B2110072FB4A /* NSDate-Extension.swift in Sources */,
 				C98FFCE12022F4130072FB4A /* HomeViewCell.swift in Sources */,
 				C92EEA7C2011CF32008F8BE1 /* AppDelegate.swift in Sources */,
 				C9FE1AF72011F5D5002ABC12 /* DiscoverViewController.swift in Sources */,
 				C98FFCD62020255A0072FB4A /* WelcomeViewController.swift in Sources */,
+				C90AE874202A942B00FC0EEC /* ComposeTextView.swift in Sources */,
 				C9FE1AF12011F447002ABC12 /* MainViewController.swift in Sources */,
 				C98FFCE32023229B0072FB4A /* PicCollectionView.swift in Sources */,
 				C9FA6E26201B1D29007BA529 /* Common.swift in Sources */,
@@ -564,6 +602,8 @@
 				C98FFCD220201AD90072FB4A /* UserAccountTool.swift in Sources */,
 				C9E03F29201713B0009363FB /* VisitorView.swift in Sources */,
 				C9FA6E23201B0CAE007BA529 /* OAuthViewController.swift in Sources */,
+				C90AE87020297FD800FC0EEC /* ComposeTitleView.swift in Sources */,
+				C90AE876202AF06F00FC0EEC /* PicPickerCollectionView.swift in Sources */,
 				C9FE1AF52011F5C4002ABC12 /* HomeViewController.swift in Sources */,
 				C98FFCD9202069B90072FB4A /* StatusModel.swift in Sources */,
 				C9FE1AF92011F5E4002ABC12 /* MessageViewController.swift in Sources */,

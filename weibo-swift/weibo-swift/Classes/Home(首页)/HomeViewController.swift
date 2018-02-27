@@ -9,16 +9,19 @@
 import UIKit
 import Popover
 import SDWebImage
+import MJRefresh
 
 class HomeViewController: BaseViewController {
     
     /// 懒加载 titleView 按钮
-    lazy var titleBtn = UIButton()
+    private lazy var titleBtn = UIButton()
     
     /// 懒加载 popoverTableView
-    lazy var popoverTableView = UITableView()
+    private lazy var popoverTableView = UITableView()
     
     private lazy var viewModels: [StatusViewModel] = [StatusViewModel]()
+    
+    private lazy var tipLabel = UILabel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +33,17 @@ class HomeViewController: BaseViewController {
         // 初始化导航栏按钮
         setupNavigationBar()
         
-        // 请求数据
-        loadStatuses()
-        
         // 设定 tableView 自适应高度
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 200
+        
+        // 创建headerView
+        setupHeaderView()
+        // 创建headerView
+        setupFooterView()
+        
+        // 设置提示的Label
+        setupTipLabel()
     }
 }
 
@@ -56,6 +64,36 @@ extension HomeViewController {
         titleBtn.sizeToFit()
         titleBtn.adjustsImageWhenHighlighted = false
         navigationItem.titleView = titleBtn
+    }
+    
+    /// 创建headerView
+    private func setupHeaderView() {
+        let header = MJRefreshNormalHeader(refreshingTarget: self, refreshingAction: #selector(HomeViewController.loadNewStatuses))
+        
+        header?.setTitle("下拉刷新", for: .idle)
+        header?.setTitle("可以松手", for: .pulling)
+        header?.setTitle("正在刷新", for: .refreshing)
+        
+        tableView.mj_header = header
+        tableView.mj_header.beginRefreshing()
+    }
+    
+    /// 创建footerView
+    private func setupFooterView() {
+        tableView.mj_footer = MJRefreshAutoFooter(refreshingTarget: self, refreshingAction: #selector(HomeViewController.loadMoreStatuses))
+    }
+
+    private func setupTipLabel() {
+        navigationController?.navigationBar.insertSubview(tipLabel, at: 0)
+        
+        tipLabel.frame = CGRect(x: 0, y: 14, width: UIScreen.main.bounds.width, height: 30)
+        
+        tipLabel.backgroundColor = mainColor
+        tipLabel.textColor = .white
+        tipLabel.textAlignment = .center
+        tipLabel.font = UIFont.systemFont(ofSize: 14)
+        tipLabel.alpha = 0.0
+        tipLabel.isHidden = true
     }
 }
 
@@ -112,9 +150,31 @@ extension HomeViewController {
 
 // MARK: - 请求数据
 extension HomeViewController {
+    /// 下拉加载最新的数据
+    @objc private func loadNewStatuses() {
+        loadStatuses(isNewData: true)
+    }
+    
+    /// 上拉加载最新的数据
+    @objc private func loadMoreStatuses() {
+        loadStatuses(isNewData: false)
+    }
+    
     /// 请求数据
-    private func loadStatuses() {
-        NetWorkTools.shareInstance.loadNewWeiBo { (result, error) in
+    private func loadStatuses(isNewData: Bool) {
+        // 获取since_id / max_id
+        var since_id = 0
+        var max_id = 0
+        
+        if isNewData {
+            since_id = viewModels.first?.status?.mid ?? 0
+        } else {
+            max_id = viewModels.last?.status?.mid ?? 0
+            max_id = max_id == 0 ? 0 : (max_id - 1)
+        }
+        
+        
+        NetWorkTools.shareInstance.loadNewWeiBo(since_id: since_id, max_id: max_id) { (result, error) in
             if error != nil {
                 SDLog(error)
                 return
@@ -125,14 +185,22 @@ extension HomeViewController {
                 return
             }
             
+            var tempViewModel = [StatusViewModel]()
+            
             for statusDict in resultArray {
                 let status = StatusModel(dict: statusDict)
                 let viewModel = StatusViewModel(status: status)
                 
-                self.viewModels.append(viewModel)
+                tempViewModel.append(viewModel)
             }
             
-            self.cacheImages(viewModels: self.viewModels)
+            if isNewData {
+                self.viewModels = tempViewModel + self.viewModels
+            } else {
+                self.viewModels += tempViewModel
+            }
+            
+            self.cacheImages(viewModels: tempViewModel)
         }
     }
     
@@ -147,7 +215,7 @@ extension HomeViewController {
                 group.enter()
                 
                 SDWebImageManager.shared().imageDownloader?.downloadImage(with: picURL, options: [], progress: nil, completed: { (_, _, _, _) in
-                    SDLog("已下载图片")
+                    
                     group.leave()
                 })
             }
@@ -155,8 +223,33 @@ extension HomeViewController {
         
         // 2.刷新表格
         group.notify(queue: DispatchQueue.main) {
-            print("刷新表格")
             self.tableView.reloadData()
+            self.tableView.mj_header.endRefreshing()
+            self.tableView.mj_footer.endRefreshing()
+            
+            // 显示提示的Label
+            self.showTipLabel(count: viewModels.count)
+        }
+    }
+
+    /// 显示提示的Label
+    private func showTipLabel(count : Int) {
+        tipLabel.text = count == 0 ? "没有新数据" : "\(count) 条形微博"
+        
+        UIView .animate(withDuration: 1.0, animations: {
+            self.tipLabel.frame.origin.y = 44
+            self.tipLabel.isHidden = false
+            self.tipLabel.alpha = 1.0
+            
+        }) { (_) in
+            UIView .animate(withDuration: 1.0, delay: 1.5, options: [], animations: {
+                self.tipLabel.frame.origin.y = 14
+                self.tipLabel.alpha = 0.0
+                
+            }, completion: { (_) in
+                self.tipLabel.isHidden = true
+                
+            })
         }
     }
 }

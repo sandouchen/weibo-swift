@@ -37,7 +37,11 @@ extension MainViewController {
 extension MainViewController {
     /// 发布按钮点击事件
     @objc private func composeBtnClick() {
-        SDLog("composeBtnClick")
+        let composeVc = ComposeViewController()
+        
+        let composeNav = UINavigationController(rootViewController: composeVc)
+        
+        present(composeNav, animated: true, completion: nil)
     }
 }
 

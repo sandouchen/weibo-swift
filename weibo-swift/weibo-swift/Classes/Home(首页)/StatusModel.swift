@@ -33,6 +33,11 @@ class StatusModel: NSObject {
         if let userDict = dict["user"] as? [String : AnyObject] {
             user = UserModel(dict: userDict)
         }
+        
+        // 2.将转发微博字典转成转发微博模型对象
+        if let retweetedStatusDict = dict["retweeted_status"] as? [String : AnyObject] {
+            retweeted_status = StatusModel(dict: retweetedStatusDict)
+        }
     }
     
     override func setValue(_ value: Any?, forUndefinedKey key: String) {}

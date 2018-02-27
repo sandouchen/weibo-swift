@@ -8,12 +8,13 @@
 
 import Foundation
 // MARK: - 授权相关常量
-/// 授权 KEY
 let appKey = "543494100"
 let appSecret = "2868cbf8547c2feb7db2794932d8ce0f"
 let redirectUri = "http://www.520it.com"
 
-
+// MARK:- 选择照片的通知常量
+let PicPickerAddPhotoNote = "PicPickerAddPhotoNote"
+let PicPickerRemovePhotoNote = "PicPickerRemovePhotoNote"
 
 
 

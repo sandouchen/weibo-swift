@@ -10,6 +10,7 @@ import UIKit
 import SDWebImage
 
 private let edgeMargin : CGFloat = 10
+private let itemMargin : CGFloat = 3
 
 class HomeViewCell: UITableViewCell {
     // MARK:- 控件属性
@@ -21,11 +22,14 @@ class HomeViewCell: UITableViewCell {
     @IBOutlet weak var sourceLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var picView: PicCollectionView!
+    @IBOutlet weak var retweetedContentLabel: UILabel!
+    @IBOutlet weak var retweetedBgView: UIView!
     
     // MARK:- 约束的属性
     @IBOutlet weak var picViewHCons: NSLayoutConstraint!
     @IBOutlet weak var picViewWCons: NSLayoutConstraint!
     @IBOutlet weak var picViewBottomCons: NSLayoutConstraint!
+    @IBOutlet weak var retweetedContentLabelTopCons: NSLayoutConstraint!
     
     var viewModel: StatusViewModel? {
         didSet {
@@ -68,6 +72,21 @@ class HomeViewCell: UITableViewCell {
             // 11.将picURL数据传递给picView
             picView.picURLs = viewModel.picURLs
             
+            // 12.设置转发微博的正文
+            if viewModel.status?.retweeted_status != nil {
+                if let screenName = viewModel.status?.retweeted_status?.user?.screen_name, let retweetedText = viewModel.status?.retweeted_status?.text {
+                    retweetedContentLabel.text = "@" + "\(screenName): " + retweetedText
+                    
+                    // 设置转发正文距离顶部的约束
+                    retweetedContentLabelTopCons.constant = 15
+                }
+                
+                retweetedBgView.isHidden = false
+            } else {
+                retweetedContentLabel.text = nil
+                retweetedContentLabelTopCons.constant = 0
+                retweetedBgView.isHidden = true
+            }
             
         }
     }
@@ -104,19 +123,19 @@ extension HomeViewCell {
             if let image = image {
                 layout.itemSize = CGSize(width: image.size.width * 2, height: image.size.height * 2)
                 
-                return CGSize(width: image.size.width * 2, height: image.size.height * 2)
+                return layout.itemSize
             }
         }
         
         // 4.计算出来imageViewWH
-        let imageViewWH = (UIScreen.main.bounds.width - 4 * edgeMargin) / 3
+        let imageViewWH = (UIScreen.main.bounds.width - 2 * edgeMargin - 2 * itemMargin) / 3
         
         // 5.设置其他张图片时layout的itemSize
         layout.itemSize = CGSize(width: imageViewWH, height: imageViewWH)
         
         // 6.四张配图
         if count == 4 {
-            let picViewWH = imageViewWH * 2 + edgeMargin
+            let picViewWH = imageViewWH * 2 + itemMargin
             
             return CGSize(width: picViewWH, height: picViewWH)
         }
@@ -126,7 +145,7 @@ extension HomeViewCell {
         let rows = CGFloat((count - 1) / 3 + 1)
         
         // 7.2.计算picView的高度
-        let picViewH = rows * imageViewWH + (rows - 1) * edgeMargin
+        let picViewH = rows * imageViewWH + (rows - 1) * itemMargin
         
         // 7.3.计算picView的宽度
         let picViewW = UIScreen.main.bounds.width - 2 * edgeMargin

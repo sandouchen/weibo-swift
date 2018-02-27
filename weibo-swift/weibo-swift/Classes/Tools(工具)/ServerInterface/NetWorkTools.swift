@@ -99,10 +99,10 @@ extension NetWorkTools {
     }
 
     /// 获取微博信息
-    func loadNewWeiBo(finished: @escaping(_ result: [[String : AnyObject]]?, _ error: Error?) -> ()) {
+    func loadNewWeiBo(since_id: Int, max_id : Int, finished: @escaping(_ result: [[String : AnyObject]]?, _ error: Error?) -> ()) {
         let url = "https://api.weibo.com/2/statuses/home_timeline.json"
         
-        let parameters = ["access_token" : (UserAccountTool.shareInstance.account?.access_token)!]
+        let parameters = ["access_token" : (UserAccountTool.shareInstance.account?.access_token)!, "since_id" : "\(since_id)", "max_id" : "\(max_id)"]
         
         request(RequestType: .GET, urlString: url, parameters: parameters as [String : AnyObject]) { (result, error) in
             // 获取字典的数组数据
